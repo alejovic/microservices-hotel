@@ -1,4 +1,4 @@
-package com.avg.user.service;
+package com.avg;
 
 import lombok.*;
 import org.springframework.http.HttpStatus;

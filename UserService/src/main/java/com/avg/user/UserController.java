@@ -1,4 +1,4 @@
-package com.avg.user.service;
+package com.avg.user;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -21,7 +21,7 @@ public class UserController {
                 .body(user);
     }
 
-    @GetMapping("/{userId}")
+    @GetMapping("/{id}")
     public ResponseEntity<User> getUser(@PathVariable Long id) {
         User user = service.getUser(id);
         return ResponseEntity.status(HttpStatus.OK)

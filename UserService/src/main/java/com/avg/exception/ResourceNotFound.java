@@ -1,4 +1,7 @@
-package com.avg.user.service;
+package com.avg.exception;
+
+import com.avg.user.User;
+import org.springframework.data.jpa.repository.JpaRepository;
 
 public class ResourceNotFound extends RuntimeException {
 
@@ -9,4 +12,5 @@ public class ResourceNotFound extends RuntimeException {
     public ResourceNotFound(String message) {
         super(message);
     }
+
 }

@@ -1,4 +1,4 @@
-package com.avg.user.service;
+package com.avg.user;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

@@ -1,4 +1,4 @@
-package com.avg.user.service;
+package com.avg.user;
 
 import java.util.List;
 
