@@ -1,4 +1,12 @@
 databaseChangeLog:
+# H2 Database
+#  - include:
+#      file: /db/h2/schema.yaml
+#  - include:
+#      file: /db/h2/data.yaml
+
+
+# Postgres Database
   - include:
       file: /db/postgres/schema.sql
   - include:

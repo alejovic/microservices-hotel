@@ -1,0 +1,30 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-table-micro_users
+      author: alejovic@gmail.com
+
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  autoIncrement: true
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: micro_users_pkey
+                  name: id
+                  type: int8
+              - column:
+                  constraints:
+                    nullable: false
+                  name: about
+                  type: varchar(100)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: email
+                  type: varchar(100)
+              - column:
+                  name: name
+                  type: varchar(100)
+            tableName: micro_users

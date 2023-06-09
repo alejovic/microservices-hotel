@@ -1,0 +1,21 @@
+databaseChangeLog:
+  - changeSet:
+      id: insert-table-micro_users
+      author: alejovic@gmail.com
+
+      changes:
+        - insert:
+            tableName: micro_users
+            columns:
+            - column:
+                name: id
+                value: "1"
+            - column:
+                name: about
+                value: "about"
+            - column:
+                name: email
+                value: "alejovic@gmail.com"
+            - column:
+                name: name
+                value: "Alejandro"

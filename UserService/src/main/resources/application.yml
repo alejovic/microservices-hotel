@@ -1,23 +1,35 @@
 server:
   port: 8081
 
+logging:
+  file:
+    name: user-service.log
+
 spring:
 #  config:
 #    activate:
 #      on-profile: test
+
   datasource:
     url: jdbc:postgresql://localhost:55432/hotel-userservice
     driver-class-name: org.postgresql.Driver
     username: postgres
     password: postgres
+
+#  datasource:
+#    url: jdbc:h2:file:./data/hotel-userservice
+#    driver-class-name: org.h2.Driver
+#    username: h2
+#    password: h2
+#  h2:
+#    console:
+#      enabled: true
+
   jpa:
     hibernate:
       ddl-auto: none
     defer-datasource-initialization: false
     show-sql: true
-    properties:
-      hibernate:
-        dialect: org.hibernate.dialect.PostgreSQLDialect
 
   liquibase:
     enabled: true
@@ -27,3 +39,12 @@ spring:
     drop-first: true
     url: jdbc:postgresql://localhost:55432/hotel-userservice
     default-schema: public
+
+#  liquibase:
+#    enabled: true
+#    change-log: classpath:/db/changelog/db.changelog-master.yaml
+#    user: h2
+#    password: h2
+#    drop-first: true
+#    url: jdbc:h2:file:./data/hotel-userservice
+#    default-schema: public
