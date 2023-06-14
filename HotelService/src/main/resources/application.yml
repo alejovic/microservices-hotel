@@ -1,0 +1,46 @@
+server:
+  port: 8082
+
+logging:
+  file:
+    name: hotel-service.log
+
+spring:
+  datasource:
+    url: jdbc:oracle:thin:@//localhost:51521/XEPDB1
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+    username: microservice_hotel
+    password: microservice_hotel
+
+#    datasource:
+#      url: jdbc:h2:file:./data/hotel-service
+#      driver-class-name: org.h2.Driver
+#      username: h2
+#      password: h2
+#    h2:
+#      console:
+#        enabled: true
+
+  jpa:
+    hibernate:
+      ddl-auto: none
+    defer-datasource-initialization: false
+    show-sql: true
+
+  liquibase:
+    enabled: true
+    change-log: classpath:/db/changelog/db.changelog-master.yaml
+    user: microservice_hotel
+    password: microservice_hotel
+    drop-first: true
+    url: jdbc:oracle:thin:@//localhost:51521/XEPDB1
+    default-schema: microservice_hotel
+
+#  liquibase:
+#    enabled: true
+#    change-log: classpath:/db/changelog/db.changelog-master.yaml
+#    user: h2
+#    password: h2
+#    drop-first: true
+#    url: jdbc:h2:file:./data/hotel-service
+#    default-schema: public

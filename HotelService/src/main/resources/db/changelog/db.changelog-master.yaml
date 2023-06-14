@@ -1,0 +1,21 @@
+databaseChangeLog:
+
+  # H2 Database
+  #  - include:
+  #      file: /db/h2/schema.yaml
+  #  - include:
+  #      file: /db/h2/data.yaml
+
+  # Oracle
+  - include:
+      id: create-schema-hotel
+      author: alejovic@gmail.com
+      comment: Table Creation
+      file: /db/oracle/schema.sql
+
+  - include:
+      id: data-insert-hotel
+      author: alejovic@gmail.com
+      comment: Data insert
+      file: /db/oracle/data.sql
+
