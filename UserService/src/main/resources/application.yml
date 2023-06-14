@@ -11,13 +11,13 @@ spring:
 #      on-profile: test
 
   datasource:
-    url: jdbc:postgresql://localhost:55432/hotel-userservice
+    url: jdbc:postgresql://localhost:55432/microservice_hotel
     driver-class-name: org.postgresql.Driver
     username: postgres
     password: postgres
 
 #  datasource:
-#    url: jdbc:h2:file:./data/hotel-userservice
+#    url: jdbc:h2:file:./data/microservice_hotel
 #    driver-class-name: org.h2.Driver
 #    username: h2
 #    password: h2
@@ -37,7 +37,7 @@ spring:
     user: postgres
     password: postgres
     drop-first: true
-    url: jdbc:postgresql://localhost:55432/hotel-userservice
+    url: jdbc:postgresql://localhost:55432/microservice_hotel
     default-schema: public
 
 #  liquibase:
@@ -46,5 +46,5 @@ spring:
 #    user: h2
 #    password: h2
 #    drop-first: true
-#    url: jdbc:h2:file:./data/hotel-userservice
+#    url: jdbc:h2:file:./data/microservice_hotel
 #    default-schema: public
