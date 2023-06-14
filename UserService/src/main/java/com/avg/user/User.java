@@ -7,6 +7,9 @@ import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import lombok.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Table(name = "micro_users")
 @Setter
@@ -27,5 +30,8 @@ public class User {
     @Column(length = 100)
     @NotBlank(groups = AdvanceInfo.class)
     private String about;
+
+    @Transient
+    private List<Rating> ratings = new ArrayList<>();
 
 }
