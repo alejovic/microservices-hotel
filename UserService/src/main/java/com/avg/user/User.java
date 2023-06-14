@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name = "micro_users")
+@Table(schema = "public", name = "user")
 @Setter
 @Getter
 @AllArgsConstructor
