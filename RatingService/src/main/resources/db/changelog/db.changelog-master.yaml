@@ -1,0 +1,13 @@
+databaseChangeLog:
+# H2 Database
+#  - include:
+#      file: /db/h2/schema.yaml
+#  - include:
+#      file: /db/h2/data.yaml
+
+
+# Mongo Database
+  - include:
+      file: /db/mongo/schema.yaml
+  - include:
+      file: /db/mongo/data.json

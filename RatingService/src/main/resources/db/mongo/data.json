@@ -1,0 +1,47 @@
+{
+  "databaseChangeLog": [
+    {
+      "changeSet": {
+        "id": "insert-document-rating",
+        "author": "alejovic@gmail.com",
+        "changes": [
+          {
+            "insertMany": {
+              "collectionName": "user_ratings",
+              "documents": {
+                "$rawJson": [
+                  {
+                    "id" : "1",
+                    "userId" : 1,
+                    "hotelId" : 1,
+                    "rating" : 5,
+                    "feedback" : "feedback"
+                  },
+                  {
+                    "id" : "2",
+                    "userId" : 1,
+                    "hotelId" : 1,
+                    "rating" : 5,
+                    "feedback" : "feedback-2"
+                  },
+                  {
+                    "id" : "3",
+                    "userId" : 1,
+                    "hotelId" : 1,
+                    "rating" : 5,
+                    "feedback" : "feedback-3"
+                  }
+                ]
+              }
+            }
+          }
+        ],
+        "rollback": {
+          "runCommand": {
+            "command": "{ delete: \"user_ratings\", deletes: [{q: { }, limit: 0}] }"
+          }
+        }
+      }
+    }
+  ]
+}
