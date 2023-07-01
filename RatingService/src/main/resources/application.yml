@@ -1,25 +1,67 @@
 server:
   port: 8083
 
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+
 logging:
   file:
     name: hotel-rating.log
 
-
+#  db.createUser(
+#  {
+#    user: "mongo_dev",
+#    pwd: "password",
+#
+#    roles: [{"role":"readWrite","db":"microservice_hotel"}],
+#    /* All built-in Roles
+#    Database User Roles: read|readWrite
+#      Database Admin Roles: dbAdmin|dbOwner|userAdmin
+#      Cluster Admin Roles: clusterAdmin|clusterManager|clusterMonitor|hostManager
+#      Backup and Restoration Roles: backup|restore
+#      All-Database Roles: readAnyDatabase|readWriteAnyDatabase|userAdminAnyDatabase|dbAdminAnyDatabase
+#      Superuser Roles: root
+#      */
+#
+#      // authenticationRestrictions: [ {
+#        //       clientSource: ["192.0.2.0"],
+#        //       serverAddress: ["198.51.100.0"]
+#                                  // } ],
+#    //mechanisms: [ "SCRAM-SHA-1","SCRAM-SHA-256"],
+#    //passwordDigestor: "server|client",
+#  }
+#  )
 
 spring:
+  application:
+    name: RATING-SERVICE
+
   data:
     mongodb:
-      uri: mongodb://localhost:57017/microservice_hotel
-      username: microservice_hotel
+      username: mongo_dev
       password: password
+      database: microservice_hotel
+      host: localhost
+      authentication-database: admin
+      port: 57017
+
 
   liquibase:
-    enabled: true
+    enabled: false
     change-log: classpath:/db/changelog/db.changelog-master.yaml
-    user: microservice_hotel
+    user: mongo_dev
     password: password
     drop-first: true
-    url: mongodb://localhost:57017/microservice_hotel
+    url: mongodb://localhost:57017/microservice_hotel?authSource=microservice_hotel
     driver-class-name: liquibase.ext.mongodb.database.MongoClientDriver
 
+    #url: jdbc:mongodb://mongo_dev:password@localhost:57017/microservice_hotel?authSource=admin
+    #driver-class-name: com.mongodb.jdbc.MongoDriver
+
+    #url: mongodb://mongo_dev:password@localhost:57017/microservice_hotel?authSource=admin
